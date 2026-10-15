@@ -39,8 +39,9 @@ ORTHOGRAPHY_RULES_ALIASES: Dict[str, str] = {}
 ORTHOGRAPHY_WORDLIST: Optional[str] = None
 
 KEYMAPS: Dict[str, Dict[str, Tuple[str]]] = {
-    # This is mapped how the CAS keyboard arranges the QWERTY layer.
-    # For users of normal QWERTY, some keys should be re-mapped.
+    # Mapped for a regular QWERTY keyboard, with the vowels on x c v | b n m
+    # for the thumbs like English steno's c v | n m. A CAS keyboard's QWERTY
+    # layer instead puts the vowels on z x c | v b n and -ㅁ on m.
     'Keyboard': {
         '1-': '1',
         '2-': '2',
@@ -60,14 +61,13 @@ KEYMAPS: Dict[str, Dict[str, Tuple[str]]] = {
         'ㅂ-': 'f',
         'ㄹ-': 'g',
 
-        'ㅗ-': 'z',
-        'ㅏ-': 'x',
-        'ㅜ-': 'c',
+        'ㅗ-': 'x',
+        'ㅏ-': 'c',
+        'ㅜ-': 'v',
 
-
-        '-*': 'v',
-        '-ㅓ': 'b',
-        '-ㅣ': 'n',
+        '-*': 'b',
+        '-ㅓ': 'n',
+        '-ㅣ': 'm',
 
         '-6': '6',
         '-7': '7',
@@ -85,7 +85,7 @@ KEYMAPS: Dict[str, Dict[str, Tuple[str]]] = {
         '-ㄴ': 'j',
         '-ㅅ': 'k',
         '-ㅈ': 'l',
-        '-ㅁ': 'm',
+        '-ㅁ': ';',
 
         'arpeggiate': 'space',
         'no-op': ()
