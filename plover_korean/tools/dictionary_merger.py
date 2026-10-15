@@ -1,45 +1,72 @@
 '''
-Used for merging dictionaries into a single dictionary.
+Builds the CAS main dictionary from the hand-edited partial dictionaries.
+
+Run this after editing anything in system/cas/dictionaries/partial:
+
+    uv run python -m plover_korean.tools.dictionary_merger
 '''
 
-import os
 import json
-from plover_korean.tools.utilities import (create_plover_dictionary,
-                                           MODULE_DIR, FOLDER_DICT_FINAL,
-                                           FOLDER_DICT_PARTIAL,
-                                           PREFIX_CAS, PREFIX_SORIZAVA)
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import yaml
+from plover import system
+from plover.registry import registry
+from plover.steno import normalize_steno
+
+from plover_korean.system.cas import definition as cas_definition
+from plover_korean.tools.utilities import create_plover_dictionary
 
 
-DICTIONARIES_CAS = [
-    PREFIX_CAS + 'syllables.json',
-    PREFIX_CAS + 'english_fingerspelling.json',
-    PREFIX_CAS + 'symbols.json',
-    PREFIX_CAS + 'briefs.json',
-    PREFIX_CAS + 'fundamental.json',
-    PREFIX_CAS + 'single_keys.json'
-]
+CAS_SYSTEM_NAME = 'Korean Modern C'
+CAS_DICTIONARIES_DIR = Path(__file__).resolve().parent.parent / 'system' / 'cas' / 'dictionaries'
+CAS_PARTIAL_DIR = CAS_DICTIONARIES_DIR / 'partial'
+CAS_MAIN_DICTIONARY = CAS_DICTIONARIES_DIR / 'ko_cas_main.json'
 
-DICTIONARIES_SORIZAVA = [
 
-]
-
-def merge_dictionaries(dictionaries: list, output_filename: str):
+def load_partial(path: Path) -> List[Tuple[str, str]]:
     '''
-    Merges the provided dictionaries into one file.
+    Returns (stroke, translation) pairs from a partial dictionary.
+
+    YAML partials map each translation to a list of strokes, while JSON
+    partials use Plover's own stroke to translation format.
     '''
 
-    output_data = {}
-    # Order here matters! The earlier dictionaries will have entries overwritten by
-    # the later dictionaries if duplicate entries are found. This is intentional.
-    for dictionary in dictionaries:
-        input_path = os.path.join(MODULE_DIR, FOLDER_DICT_PARTIAL, dictionary)
-        with open(input_path, 'r', encoding='utf8') as data_file:
-            data = json.load(data_file)
-            output_data = {**output_data, **data}
+    text = path.read_text(encoding='utf-8')
+    if path.suffix == '.yaml':
+        return [(stroke, translation)
+                for translation, strokes in yaml.safe_load(text).items()
+                for stroke in strokes]
+    return list(json.loads(text).items())
 
-    output_path = os.path.join(MODULE_DIR, FOLDER_DICT_FINAL, output_filename)
-    create_plover_dictionary(output_path, output_data)
+
+def build_cas_main() -> Dict[str, str]:
+    '''
+    Merges every CAS partial dictionary, with strokes normalized the way
+    Plover will read them. Fails on strokes Plover cannot parse and on a
+    stroke given different translations.
+    '''
+
+    registry.register_plugin('system', CAS_SYSTEM_NAME, cas_definition)
+    system.setup(CAS_SYSTEM_NAME)
+
+    merged: Dict[str, str] = {}
+    sources: Dict[str, str] = {}
+    partials = sorted(CAS_PARTIAL_DIR.glob('*.yaml')) + sorted(CAS_PARTIAL_DIR.glob('*.json'))
+    for path in partials:
+        for raw_stroke, translation in load_partial(path):
+            try:
+                stroke = '/'.join(normalize_steno(raw_stroke))
+            except ValueError as error:
+                raise ValueError(f'{path.name}: {raw_stroke!r} ({translation!r}): {error}') from error
+            if merged.get(stroke, translation) != translation:
+                raise ValueError(f'{stroke!r} is {merged[stroke]!r} in {sources[stroke]} '
+                                 f'but {translation!r} in {path.name}')
+            merged[stroke] = translation
+            sources[stroke] = path.name
+    return merged
+
 
 if __name__ == '__main__':
-    merge_dictionaries(DICTIONARIES_CAS, PREFIX_CAS + 'main.json')
-    # merge_dictionaries(DICTIONARIES_SORIZAVA, PREFIX_SORIZAVA + 'main.json')
+    create_plover_dictionary(CAS_MAIN_DICTIONARY, build_cas_main())

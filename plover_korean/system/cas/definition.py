@@ -94,6 +94,8 @@ KEYMAPS: Dict[str, Dict[str, Tuple[str]]] = {
 
 DICTIONARIES_ROOT: str = 'asset:plover_korean:system/cas/dictionaries'
 DEFAULT_DICTIONARIES: List[str] = [
+    # Generated from partial/ by plover_korean.tools.dictionary_merger.
+    'ko_cas_main.json',
     'ko_cas_numbers.py',
     'ko_cas_base.py'
 ]

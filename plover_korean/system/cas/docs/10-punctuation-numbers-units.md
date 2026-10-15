@@ -23,7 +23,7 @@ The following are briefs for words related to numbers that you cannot make in on
 - `ㅎㄴㅏ`: 하나{^}
 - `ㄷㅅㅓㅅ`: 다섯{^}
 - `ㅇㅅ*ㅅ`: 여섯{^}
-- `ㅇㄹ-ㅂㄱ`: 일곱{^}
+- `ㅇㄹ-ㄱㅂ`: 일곱{^}
 - `ㄷㅇㅂ`: 여덟{^}
 - `ㅇㅏㅎㅂ`: 아홉{^}
 
