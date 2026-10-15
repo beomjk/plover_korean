@@ -10,6 +10,16 @@ Korean stenography for [Plover](https://github.com/openstenoproject/plover).
 
 *This plugin has not been released on PyPI yet, so locally installing from source is currently the only option*
 
+The macOS Plover app cannot build packages from source, since pip re-runs `sys.executable` for build steps and in the app that is the Plover launcher. Build a wheel with [uv](https://docs.astral.sh/uv/) instead and install that file:
+
+```sh
+# Editable: Plover runs the code in this folder, so edits only need a Plover restart.
+uv run python -c "from setuptools import build_meta; print(build_meta.build_editable('dist'))"
+/Applications/Plover.app/Contents/MacOS/Plover -s plover_plugins install dist/plover_korean-0.0.3-0.editable-py3-none-any.whl
+```
+
+Rebuild and reinstall only when `pyproject.toml` changes (dependencies or entry points). For a regular install, install the wheel from `uv build --wheel` instead.
+
 If you have issues with character misalignment in places like the Paper Tape in the Plover GUI try installing [Nanum Gothic Coding](https://fonts.google.com/earlyaccess#Nanum+Gothic+Coding), a monospaced sans-serif Korean font, and setting Plover's font to that where possible. The majority of monospaced fonts do not have CJK language support which is why this issue comes up for things relying on monospaced plain text display.
 
 ## Korean Modern C
