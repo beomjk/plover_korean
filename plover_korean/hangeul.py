@@ -106,8 +106,8 @@ def attach_particle(word: str, rule_info: ParticleRuleInfo) -> str:
     """Attaches a particle to a word.
 
     Chooses a particle to use based on a word and a rule.
-    If unable to determine a particle, the rule's consonant
-    particle will be attached.
+    If unable to determine a particle, such as when there is no word before
+    the particle, the rule's consonant particle will be attached.
 
     Args:
         word: The word to choose a particle for.
@@ -116,5 +116,9 @@ def attach_particle(word: str, rule_info: ParticleRuleInfo) -> str:
     Returns:
         The word with the appropriate particle attached.
     """
+
+    # hgtk looks at the last letter, so it fails on empty or blank words.
+    if not word.strip():
+        return word + rule_info.consonant_particle
 
     return hgtk.josa.attach(word, rule_info.get_hgtk_format())

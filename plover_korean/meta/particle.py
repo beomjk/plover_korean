@@ -59,7 +59,7 @@ def apply_particle_generic(context: _Context, args: str) -> _Action:
     try:
         rule_info = load_raw_rule(args)
     except ValueError:
-        pass
+        rule_info = None
 
     return apply_particle(context, rule_info)
 
