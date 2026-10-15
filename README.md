@@ -18,6 +18,36 @@ If you have issues with character misalignment in places like the Paper Tape in 
 
 Korean Modern C is a Korean stenography system based on the system used by Korean CAS machines. See the reference guide for this system [here](/plover_korean/system/cas/docs/README.md).
 
+### Keyboard Layout
+
+The default keymap is for a regular QWERTY keyboard, with the vowels under the thumbs like English steno's `c v | n m`:
+
+| Row | Left hand | Right hand |
+| --- | --- | --- |
+| Numbers | `1 2 3 4 5` | `6 7 8 9 0` |
+| Top | `q w e r t` = ㅎ ㅁ ㄱ ㅈ ㄴ | `y u i o p` = ㅎ ㅇ ㄹ ㄱ ㄷ |
+| Home | `a s d f g` = ㄷ ㅇ ㅅ ㅂ ㄹ | `h j k l ;` = ㅂ ㄴ ㅅ ㅈ ㅁ |
+| Thumbs | `x c v` = ㅗ ㅏ ㅜ | `b n m` = * ㅓ ㅣ |
+
+### Dictionaries
+
+- `ko_user.json`: your own entries. Plover copies it into its config folder once, and Add Translation saves to it.
+- `ko_cas_main.json`: briefs, particles, conjugations, symbols and commands. It is generated from `plover_korean/system/cas/dictionaries/partial/`; run `uv run python -m plover_korean.tools.dictionary_merger` after editing those files.
+- `ko_cas_numbers.py` and `ko_cas_base.py`: numbers and syllable blocks, built in code.
+
+The last three are read straight from the installed plugin, so they update along with it.
+
+### Commands
+
+All commands start with `ㅎㅂㄹㅗ` ("플로" as in Plover). To change one, add your own stroke to `ko_user.json`.
+
+| Stroke | Keyboard | Command |
+| --- | --- | --- |
+| `ㅎㅂㄹㅗ` | `q f g x` | Toggle Plover output |
+| `ㅎㅂㄹㅗㅇ` | `q f g x u` | Switch to English Stenotype |
+| `ㅎㅂㄹㅗㄷ` | `q f g x p` | Add translation |
+| `ㅎㅂㄹㅗㅅ` | `q f g x k` | Lookup |
+
 ## Korean Modern S
 
 ![Sorizava Layout](https://i.imgur.com/kpEL3mE.png)

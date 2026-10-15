@@ -94,8 +94,14 @@ KEYMAPS: Dict[str, Dict[str, Tuple[str]]] = {
 
 DICTIONARIES_ROOT: str = 'asset:plover_korean:system/cas/dictionaries'
 DEFAULT_DICTIONARIES: List[str] = [
-    # Generated from partial/ by plover_korean.tools.dictionary_merger.
-    'ko_cas_main.json',
-    'ko_cas_numbers.py',
-    'ko_cas_base.py'
+    # A bare name is copied once into Plover's config directory, where it
+    # stays writable for the user's own entries (like English's user.json).
+    'ko_user.json',
+    # Asset paths are read straight from the installed plugin, so updating
+    # the plugin also updates these.
+    # ko_cas_main.json is generated from partial/ by
+    # plover_korean.tools.dictionary_merger.
+    f'{DICTIONARIES_ROOT}/ko_cas_main.json',
+    f'{DICTIONARIES_ROOT}/ko_cas_numbers.py',
+    f'{DICTIONARIES_ROOT}/ko_cas_base.py'
 ]

@@ -2,3 +2,11 @@
     - "-ㅂㄴㅅㅈ"
 "{#BackSpace}":
     - "*ㅂㄴ"
+"{PLOVER:TOGGLE}":
+    - "ㅎㅂㄹㅗ"
+"{PLOVER:SET_CONFIG:'system_name':'English Stenotype'}":
+    - "ㅎㅂㄹㅗㅇ"
+"{PLOVER:ADD_TRANSLATION}":
+    - "ㅎㅂㄹㅗㄷ"
+"{PLOVER:LOOKUP}":
+    - "ㅎㅂㄹㅗㅅ"
