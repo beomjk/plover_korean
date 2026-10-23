@@ -2,6 +2,10 @@
     - "-ㅂㄴㅅㅈ"
 "{#BackSpace}":
     - "*ㅂㄴ"
+"{^^}":
+    - "ㄷ-ㄹㅅ"
+"{*!}":
+    - "ㄷ*ㄹㅅ"
 "{PLOVER:TOGGLE}":
     - "ㅎㅂㄹㅗ"
 "{PLOVER:SET_CONFIG:'system_name':'English Stenotype'}":

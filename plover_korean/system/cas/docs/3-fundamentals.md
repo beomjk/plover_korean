@@ -12,7 +12,12 @@ Keep this in mind when you add entries to your own dictionary.
 
 ## Suppressing Spaces
 
-Sometimes a space appears where you don't want one. Plover's [dictionary format wiki page](https://github.com/openstenoproject/plover/wiki/Dictionary-Format) describes the syntax you can use in dictionary entries to prevent this. TODO: add a stroke like D-LS to the default dictionary to go with `*`.
+Sometimes a space appears where you don't want one. Plover's [dictionary format wiki page](https://github.com/openstenoproject/plover/wiki/Dictionary-Format) describes the syntax you can use in dictionary entries to prevent this. The default dictionary has two strokes for this, named after English steno's `TK-LS` ("D-LS"), with ㄷ, ㄹ and ㅅ standing in for D, L and S:
+
+- `ㄷ-ㄹㅅ`: `{^^}`. Write it before the next word to attach that word to the previous one.
+- `ㄷ*ㄹㅅ`: `{*!}`. Write it after a word to remove the space before that word.
+
+Neither removes a space you typed with `*`; undo that instead.
 
 ## Undo
 
