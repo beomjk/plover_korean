@@ -1,6 +1,6 @@
 # Separated Briefs
 
-These "separated" briefs use keys on both sides of the layout with no vowel between them, mostly for common two-syllable words:
+These "separated" briefs use keys on both sides of the layout with no vowel between them, mostly two-syllable nouns with no final consonants:
 
 - `ㄱ-ㅎ`: 기회{^}
 - `ㅅ-ㅎ`: 사회{^}
@@ -33,6 +33,6 @@ Another kind of separated brief uses the `*` key:
 - `ㅇ*ㅁ`: 의미{^}
 - `ㅇ*ㄱ`: 요구{^}
 - `ㄷ*ㅎ`: 대화{^}
-- `ㅎ*ㅇ`: 희의{^}
+- `ㅎ*ㅇ`: 회의{^}
 - `ㅇ*ㅅ`: 이사{^}
 - `ㅅ*ㄴ`: 소녀{^}
