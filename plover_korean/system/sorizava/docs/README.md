@@ -1,5 +1,5 @@
 # Korean Modern S Documentation
 
-Korean Modern S is a Korean stenography system based on the system used by Sorizava machines. This system is not currently possible to use without modifications to setup.cfg to enable the system plugin and manually installing it for running Plover from source. It has not been tested and there is no plan to focus on dictionary work or resolving issues in the system for now, but it's here for future reference / development.
+Korean Modern S is based on the stenography system used by Sorizava machines. It cannot be used yet without editing setup.cfg to enable the system plugin and installing it manually to run Plover from source. It has not been tested, and there are no plans to work on its dictionary or fix its issues for now; it is kept here for future reference and development.
 
-If you have any theory books or other resources for Sorizava that could be of use here, please reach out!
+If you have theory books or other Sorizava resources that could help, please get in touch!

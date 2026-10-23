@@ -1,6 +1,6 @@
 # 하다 Briefs
 
-The following are common briefs for one of the most common verbs in Korean, 하다. Notice how many of them utilize the basic particle patterns from before.
+Here are common briefs for 하다, one of the most common verbs in Korean. Notice how many of them use the basic particle patterns from before.
 
 - `-ㅎㄱ`: 하고
 - `-ㅎㅁ`: 하며

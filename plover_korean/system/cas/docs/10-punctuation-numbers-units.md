@@ -7,15 +7,15 @@
 - `1-ㄱ`: {?}
 - `1-ㄷ`: {!}
 
-Versions that have an attach operator at the end can be made by adding the `*` key to the stroke.
+Add the `*` key to any of these strokes to get a version that ends with an attach operator.
 
 ## Numbers
 
-Number keys individually work as you'd expect. Press number keys together to form long, sequential numbers. Use the `*` key to reverse the number sequence. For example, `45` outputs 45, but `45*` outputs 54.
+Each number key types its digit. Press several number keys together to type their digits in order, and add `*` to reverse them. For example, `45` outputs 45, but `45*` outputs 54.
 
 ### Briefs
 
-The following are briefs for words related to numbers that you cannot make in one stroke using syllable block logic:
+These are briefs for number words that cannot be written in one stroke as syllable blocks:
 
 - `ㅅㅂ-ㄴㅁ`: 십만{^}
 - `ㄱㅂ-ㄴㅁ`: 백만{^}
@@ -27,7 +27,7 @@ The following are briefs for words related to numbers that you cannot make in on
 - `ㄷㅇㅂ`: 여덟{^}
 - `ㅇㅏㅎㅂ`: 아홉{^}
 
-You can combine individual number keys with `ㅜ` in order to write #째, with `0` serving as a stand-in for 10 / 열:
+Combine a number key with `ㅜ` to write #째, with `0` standing for 10 (열):
 
 - `1ㅜ`: 첫째
 - `2ㅜ`: 둘째
@@ -40,7 +40,7 @@ You can combine individual number keys with `ㅜ` in order to write #째, with `
 - `ㅜ9`: 아홉째
 - `ㅜ0`: 열째
 
-Similarly, you can combine number keys with `ㅓ` for # 번째.
+Similarly, combine a number key with `ㅓ` to write # 번째:
 
 - `ㄴㅂ-ㅇㅈ`: 번째
 - `1ㅓ`: 첫 번째

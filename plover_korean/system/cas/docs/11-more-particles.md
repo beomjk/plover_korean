@@ -1,6 +1,6 @@
 # More Particles
 
-Here is another dump of particles, but this time they can be used individually *and* they can be used as part of syllable block logic. The former will have automatic spacing but the latter will not.
+Here are more particles. This time they can be used both on their own *and* as part of a syllable block. On their own they get automatic spacing; inside a syllable block they do not.
 
 - `-ㄱㄷ`: {^}가
 - `-ㅅㅈ`: {^}게

@@ -1,6 +1,6 @@
 # Conjunctions
 
-The following are briefs for some common conjunction forms.
+Here are briefs for some common conjunctions.
 
 - `ㄷㅇㄹ-ㅅ`: 따라서
 - `ㄷㅇㄹㅏ`: {^}에 따라

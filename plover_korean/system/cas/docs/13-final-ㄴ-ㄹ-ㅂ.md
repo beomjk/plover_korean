@@ -1,6 +1,6 @@
 # Final ㄴ, ㄹ, and ㅂ Cases
 
-Briefs for various cases that include attaching a final consonant + more to the initial consonant and vowel. These are used during syllable block logic.
+These briefs attach a final consonant plus an ending to an initial consonant and vowel. Use them inside a syllable block.
 
 ㄴ:
 
@@ -12,7 +12,7 @@ Briefs for various cases that include attaching a final consonant + more to the 
 ㄹ:
 
 - `-ㄹㄷ`: ㄹ 때{^}
-- ~~`-ㄹㅅ`: ㄹ 수{^}~~ TODO: This conflicts with ㄽ final consonants
+- ~~`-ㄹㅅ`: ㄹ 수{^}~~ TODO: This conflicts with the final consonant ㄽ.
 - `-ㄹㅈ`: ㄹ지{^}
 - `-ㄹㄱㅁ`: ㄹ까{^}
 

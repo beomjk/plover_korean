@@ -8,31 +8,31 @@ Korean stenography for [Plover](https://github.com/openstenoproject/plover).
 
 ## Installation
 
-*This plugin has not been released on PyPI yet, so locally installing from source is currently the only option*
+*This plugin is not on PyPI yet, so the only way to install it is from source.*
 
-The macOS Plover app cannot build packages from source, since pip re-runs `sys.executable` for build steps and in the app that is the Plover launcher. Build a wheel with [uv](https://docs.astral.sh/uv/) instead and install that file:
+The macOS Plover app cannot build a package from source: pip runs build steps with `sys.executable`, which inside the app is the Plover launcher. Instead, build a wheel with [uv](https://docs.astral.sh/uv/) and install that:
 
 ```sh
-# Editable: Plover runs the code in this folder, so edits only need a Plover restart.
+# Editable install: Plover runs the code in this folder, so after editing it you only need to restart Plover.
 uv run python -c "from setuptools import build_meta; print(build_meta.build_editable('dist'))"
 /Applications/Plover.app/Contents/MacOS/Plover -s plover_plugins install dist/plover_korean-0.0.3-0.editable-py3-none-any.whl
 ```
 
-Rebuild and reinstall only when `pyproject.toml` changes (dependencies or entry points). For a regular install, install the wheel from `uv build --wheel` instead.
+You only need to rebuild and reinstall when `pyproject.toml` changes (dependencies or entry points). For a regular, non-editable install, use the wheel from `uv build --wheel` instead.
 
-If you have issues with character misalignment in places like the Paper Tape in the Plover GUI try installing [Nanum Gothic Coding](https://fonts.google.com/earlyaccess#Nanum+Gothic+Coding), a monospaced sans-serif Korean font, and setting Plover's font to that where possible. The majority of monospaced fonts do not have CJK language support which is why this issue comes up for things relying on monospaced plain text display.
+If Korean text looks misaligned in monospaced views such as the Paper Tape, install [Nanum Gothic Coding](https://fonts.google.com/earlyaccess#Nanum+Gothic+Coding), a monospaced sans-serif Korean font, and select it in Plover's font settings where you can. Most monospaced fonts do not support Korean, which causes the misalignment.
 
 ## Korean Modern C
 
 ![CAS Layout](https://i.imgur.com/T9Kfc07.png)
 
-Korean Modern C is a Korean stenography system based on the system used by Korean CAS machines. See the reference guide for this system [here](/plover_korean/system/cas/docs/README.md).
+Korean Modern C is based on the stenography system used by Korean CAS machines. See the [reference guide](/plover_korean/system/cas/docs/README.md) for its theory.
 
-A step-by-step tutorial in Korean for learning it on a regular keyboard is in [docs/tutorial](/docs/tutorial/README.md). Its examples are typed through Plover by `docs/tutorial/tools/build_tutorial.py`, and a test fails when they no longer match; run `uv run python docs/tutorial/tools/build_tutorial.py` after changing the keymap or dictionaries.
+For a step-by-step tutorial in Korean on learning it with a regular keyboard, see [docs/tutorial](/docs/tutorial/README.md). `docs/tutorial/tools/build_tutorial.py` generates its examples by typing each one through Plover, and a test fails when the committed pages fall out of date. After changing the keymap or dictionaries, regenerate them with `uv run python docs/tutorial/tools/build_tutorial.py`.
 
 ### Keyboard Layout
 
-The default keymap is for a regular QWERTY keyboard, with the vowels under the thumbs like English steno's `c v | n m`:
+The default keymap targets a regular QWERTY keyboard. The vowels sit under the thumbs, around the `c v | n m` keys that English steno uses for its vowels:
 
 | Row | Left hand | Right hand |
 | --- | --- | --- |
@@ -43,15 +43,15 @@ The default keymap is for a regular QWERTY keyboard, with the vowels under the t
 
 ### Dictionaries
 
-- `ko_user.json`: your own entries. Plover copies it into its config folder once, and Add Translation saves to it.
+- `ko_user.json`: your own entries. Plover copies it into its config folder the first time, and Add Translation saves new entries there.
 - `ko_cas_main.json`: briefs, particles, conjugations, symbols and commands. It is generated from `plover_korean/system/cas/dictionaries/partial/`; run `uv run python -m plover_korean.tools.dictionary_merger` after editing those files.
-- `ko_cas_numbers.py` and `ko_cas_base.py`: numbers and syllable blocks, built in code.
+- `ko_cas_numbers.py` and `ko_cas_base.py`: numbers and syllable blocks, generated in code.
 
-The last three are read straight from the installed plugin, so they update along with it.
+Plover reads the last three directly from the installed plugin, so they stay current when the plugin is updated.
 
 ### Commands
 
-All commands start with `ㅎㅂㄹㅗ` ("플로" as in Plover). To change one, add your own stroke to `ko_user.json`.
+Every command stroke starts with `ㅎㅂㄹㅗ` ("플로", as in Plover). To use a different stroke, add your own entry to `ko_user.json`.
 
 | Stroke | Keyboard | Command |
 | --- | --- | --- |
@@ -64,11 +64,11 @@ All commands start with `ㅎㅂㄹㅗ` ("플로" as in Plover). To change one, a
 
 ![Sorizava Layout](https://i.imgur.com/kpEL3mE.png)
 
-Korean Modern S is a Korean stenography system based on the system used by Sorizava machines. See the reference guide for this system [here](/plover_korean/system/sorizava/docs/README.md).
+Korean Modern S is based on the stenography system used by Sorizava machines. See its [reference guide](/plover_korean/system/sorizava/docs/README.md).
 
 ## Meta Plugins
 
-In order to use these meta plugins you need to add them with a dictionary entry like the example below:
+To use a meta plugin, add a dictionary entry like this:
 
 ``` json
 {
@@ -76,13 +76,13 @@ In order to use these meta plugins you need to add them with a dictionary entry 
 }
 ```
 
-If there are no arguments for the meta plugin, just `{:meta_plugin_name}` is sufficient.
+If the meta plugin takes no arguments, `{:meta_plugin_name}` is enough.
 
 ### Particles
 
-Regex support for Korean syllable blocks does not work well so various meta plugins have been created for contextually determining what particle to attach to a word.
+Regular expressions do not work well with Korean syllable blocks, so these meta plugins choose the particle from the word before it instead.
 
-While many particles are always the same when attached to words, some change their form depending on if the word they are attached to ends with a vowel or consonant. The following table lists the current plugins with that support that can be used:
+Most particles never change, but some take a different form depending on whether the word before them ends in a vowel or a consonant. These meta plugins handle those particles:
 
 Meta Plugin Name | Concept
 ---------------- | ----------
@@ -98,13 +98,13 @@ ko_particle_na   | ~나/이나
 ko_particle_ro   | ~로/으로
 ko_particle_myeo | ~며/이며
 
-If support for a particular variable particle is not currently implemented, [**please open an issue on GitHub for support to be added**](https://github.com/nsmarkop/plover_korean/issues). However, there is one additional meta plugin that can be used for when this occurs: "ko_particle_generic". It has three plugin arguments:
+If a particle you need is missing, [**please open an issue on GitHub**](https://github.com/nsmarkop/plover_korean/issues). In the meantime, you can use the `ko_particle_generic` meta plugin, which takes three arguments:
 
-1. The particle to be used for words ending in vowels.
-2. The particle to be used for words ending in consonants.
-3. (optional) The final consonant of words where the consonant case should be treated as the vowel case.
+1. The particle to use after a vowel.
+2. The particle to use after a consonant.
+3. (Optional) A final consonant after which the vowel form is used instead.
 
-For example, an entry that replicates the "ko_particle_neun" functionality would be:
+For example, this entry works the same as `ko_particle_neun`:
 
 ``` json
 {
@@ -112,7 +112,7 @@ For example, an entry that replicates the "ko_particle_neun" functionality would
 }
 ```
 
-An entry that replicates the "ko_particle_ro" functionality would be:
+And this one works the same as `ko_particle_ro`:
 
 ``` json
 {
@@ -120,7 +120,7 @@ An entry that replicates the "ko_particle_ro" functionality would be:
 }
 ```
 
-If you attempt to use these plugins to attach particles to non-Korean words they cannot accurately determine how to display and will fall back to a default case.
+After a word that is not Korean, these plugins cannot tell which form is correct and fall back to a default.
 
 ## License
 

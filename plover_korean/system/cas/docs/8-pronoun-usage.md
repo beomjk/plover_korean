@@ -1,6 +1,6 @@
 # Pronoun Usage
 
-These are briefs dealing with the pronouns of 이것, 그것, 저것, and 우리. Again, notice how basic particle patterns from before are used for these briefs.
+These briefs cover the pronouns 이것, 그것, 저것, and 우리. Again, notice how they use the basic particle patterns from before.
 
 - `ㄱㅅ`: 것{^}
 

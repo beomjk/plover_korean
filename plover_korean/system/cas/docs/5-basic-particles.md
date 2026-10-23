@@ -1,6 +1,6 @@
 # Basic Particles
 
-While they are used individually, you will also see many of the right hand particles here used as patterns in more complicated briefs moving forward.
+These particles are used on their own, but many of the right-hand ones will also show up as patterns in more complex briefs later on.
 
 - `ㅇㅗㅏ`: {^}와 / {^}과
 - `-ㄹ`: {^}을 / {^}를

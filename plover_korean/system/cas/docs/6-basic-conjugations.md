@@ -2,7 +2,7 @@
 
 ## Block Conjugations
 
-Combine these endings with the initial consonants and medials from syllable block logic to form ad-hoc briefs for conjugated words. They cannot be used alone.
+Combine these endings with an initial consonant and vowel, as in a syllable block, to write a conjugated word in one stroke. They cannot be used on their own.
 
 - `-ㄷㄴ`: ㄴ다{^}
 - `-ㅂㄴ`: ㅂ니다{^}
@@ -14,7 +14,7 @@ Combine these endings with the initial consonants and medials from syllable bloc
 
 ## Block Briefs
 
-The following are briefs for syllable blocks that can be used by themselves in place of syllable block logic but are also useful patterns used as parts of more complicated briefs.
+These are briefs for single syllable blocks. You can use them on their own instead of writing the block out, and they are also useful patterns inside more complex briefs.
 
 - `ㅎㅁ`: 했{^}
 - `ㅇㅅ`: 있{^}
@@ -28,7 +28,7 @@ The following are briefs for syllable blocks that can be used by themselves in p
 
 ## Conjugated Briefs
 
-These use the same concepts as the block endings but are defined explicitly as briefs due to them breaking the rules slightly such as by using block briefs and having punctuation. It is generally advisable to use briefs like these when possible.
+These work like the block conjugations but are defined as separate briefs because they bend the rules slightly, for example by using block briefs and including punctuation. Use briefs like these whenever you can.
 
 - `ㅎㅁ-ㅂㄴ`: 했습니다.
 - `ㅎㅁ-ㅂㄴㅅ`: 했습니까?

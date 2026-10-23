@@ -1,19 +1,19 @@
 # Fundamentals
 
-Before getting into the theory, there are a few things to cover as background knowledge.
+Before getting into the theory, here are a few things you should know.
 
 ## Spacing
 
-Spacing in this system is often explicit and the `*` key serves as the space key for the user when used alone for this purpose. Automatic spaces by the system all the time like those used in the standard English system do not work well with this theory due to it being based off of syllable blocks at its core rather than words, however once you start getting into particle usage and more you can start to rely on it.
+In this system you usually add spaces yourself: the `*` key on its own types a space. Adding a space after every stroke, as English steno does, does not suit this theory, because it is built on syllable blocks rather than words. Once you start using particles and other briefs, though, you can rely on automatic spacing more.
 
-How this is implemented in practice with the [Korean plugin](https://github.com/nsmarkop/plover_korean) for [Plover](https://github.com/openstenoproject/plover) is that each dictionary entry must end with an attach operator: `{^}`. Any entry that does not end with an attach operator should be considered an "explicit" space. Attach operators will be shown for dictionary entries mentioned here.
+In the [Korean plugin](https://github.com/nsmarkop/plover_korean) for [Plover](https://github.com/openstenoproject/plover), this means a dictionary entry that should attach to what follows must end with the attach operator `{^}`. An entry that does not end with `{^}` is treated as ending a word, so a space follows it. These notes show the attach operator wherever an entry has one.
 
-Keep the spacing rules in mind when adding new entries to your personal dictionary.
+Keep this in mind when you add entries to your own dictionary.
 
 ## Suppressing Spaces
 
-Sometimes a space will be added when you don't want it to be. You can refer to Plover's [dictionary format wiki page](https://github.com/openstenoproject/plover/wiki/Dictionary-Format) for syntax to use in dictionary entries to overcome this. In the default dictionary, TODO: create a stroke like D-LS to go with *.
+Sometimes a space appears where you don't want one. Plover's [dictionary format wiki page](https://github.com/openstenoproject/plover/wiki/Dictionary-Format) describes the syntax you can use in dictionary entries to prevent this. TODO: add a stroke like D-LS to the default dictionary to go with `*`.
 
 ## Undo
 
-In order to undo what you've typed, you can use the `-ㅂㄴ` stroke.
+To undo what you just typed, use the `-ㅂㄴ` stroke.

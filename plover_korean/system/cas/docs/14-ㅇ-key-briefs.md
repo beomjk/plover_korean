@@ -1,11 +1,11 @@
 # ㅇ Key Briefs
 
-The ㅇ key on the left side the layout is not used during syllable block construction for the purpose of opening it up for briefs. Some of these have come up already:
+Syllable blocks never use the ㅇ key on the left side of the layout, which leaves it free for briefs. Some of these have come up already:
 
 - `ㅇㅣ`: {^}이
 - `ㅇㅓㅣ`: {^}에
 
-Some new ones in the same vein are:
+Here are some new ones along the same lines:
 
 - `ㅇㅣㄱ`: {^}이고
 - `ㅇㅣㄴ`: {^}이는
@@ -19,8 +19,8 @@ Some new ones in the same vein are:
 - `ㅇㅓㅣㄷ`: {^}에도
 - `ㅇㅓㅣㅅ`: {^}에서
 
-Dropping the left ㅇ from the briefs here is a good way to form a re-usable pattern for new briefs of more complex output. A simple example of this using the `ㄱㅅ` brief for 것 and `ㅇㅣㄷ` for 이다:
+Dropping the left ㅇ from these briefs gives a reusable pattern for building longer briefs. A simple example combines `ㄱㅅ` (것) with `ㅇㅣㄷ` (이다):
 
 - `ㄱㅅㅣㄷ`: 것이다{^}
 
-TODO: Go through and find / generate all of these to add to the dictionary
+TODO: Find or generate all of these and add them to the dictionary.
