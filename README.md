@@ -120,7 +120,7 @@ And this one works the same as `ko_particle_ro`:
 }
 ```
 
-After a word that is not Korean, these plugins cannot tell which form is correct and fall back to a default.
+After a word that is not Korean, these plugins cannot tell which form is correct and fall back to a default. With no word before them, they use the form for a consonant, such as 을 or 과.
 
 ## License
 

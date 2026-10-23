@@ -81,7 +81,7 @@ One key difference is that Korean has these double final consonants, each made o
 - ㅀ
 - ㅄ
 
-Similar to aspirated and tensed consonants, this just requires you to input both consonants at the same time. These cases do not cause issues with using `ㅎ` and `ㅇ` for aspirated and tensed versions of the consonants as none individually contain either character.
+As with aspirated and tensed consonants, you press both consonants at the same time. None of them contain `ㅇ`. ㄶ and ㅀ contain `ㅎ`, as do ㄾ and ㄿ through ㅌ (`ㅎㄷ`) and ㅍ (`ㅎㅂ`), but ㄴ and ㄹ have no aspirated forms, so these combinations are never ambiguous.
 
 ## Examples
 

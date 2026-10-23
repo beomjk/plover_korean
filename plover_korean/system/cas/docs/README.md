@@ -20,15 +20,11 @@ Notes from 컴퓨터 속기 I:
 7. [Punctuation, Numbers, and Units](10-punctuation-numbers-units.md)
 8. [More Particles](11-more-particles.md)
 9. [More Conjugations](12-more-conjugations.md)
-10. [Final ㄴ and ㄹ Cases](13-final-ㄴ-ㄹ-ㅂ.md)
+10. [Final ㄴ, ㄹ, and ㅂ Cases](13-final-ㄴ-ㄹ-ㅂ.md)
 11. [ㅇ Key Briefs](14-ㅇ-key-briefs.md)
 12. [Separated Briefs](15-separated-briefs.md)
 
-Notes from 컴퓨터 속기 II:
-
-1. []()
-
-... More to come!
+Notes from 컴퓨터 속기 II: not written yet.
 
 YouTube channels where you can see this system in action:
 

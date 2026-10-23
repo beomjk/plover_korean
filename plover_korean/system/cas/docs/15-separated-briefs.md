@@ -1,6 +1,6 @@
 # Separated Briefs
 
-These "separated" briefs use keys on both sides of the layout with no vowel between them, mostly for verbs and adverbs:
+These "separated" briefs use keys on both sides of the layout with no vowel between them, mostly for common two-syllable words:
 
 - `ㄱ-ㅎ`: 기회{^}
 - `ㅅ-ㅎ`: 사회{^}

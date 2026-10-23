@@ -47,4 +47,4 @@ The hyphens also disappear when the stroke includes one of the six middle keys, 
 
 Following these rules, the whole steno order can be written as: `12345ㅎㅁㄱㅈㄴㄷㅇㅅㅂㄹㅗㅏㅜ*ㅓㅣ67890ㅎㅇㄹㄱㄷㅂㄴㅅㅈㅁ`.
 
-To write several strokes in a row, put a `/` between them. For example, `ㅎㅓ` followed by `ㅎㅏ` is written `ㅎㅓ/ㅎㅏ`. Combining multiple chords together like this can also be referred to as a stroke.
+To write several strokes in a row, put a `/` between them. For example, `ㅎㅓ` followed by `ㅎㅏ` is written `ㅎㅓ/ㅎㅏ`. A sequence of strokes like this is called an outline.
