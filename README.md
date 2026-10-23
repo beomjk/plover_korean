@@ -28,6 +28,8 @@ If you have issues with character misalignment in places like the Paper Tape in 
 
 Korean Modern C is a Korean stenography system based on the system used by Korean CAS machines. See the reference guide for this system [here](/plover_korean/system/cas/docs/README.md).
 
+A step-by-step tutorial in Korean for learning it on a regular keyboard is in [docs/tutorial](/docs/tutorial/README.md). Its examples are typed through Plover by `docs/tutorial/tools/build_tutorial.py`, and a test fails when they no longer match; run `uv run python docs/tutorial/tools/build_tutorial.py` after changing the keymap or dictionaries.
+
 ### Keyboard Layout
 
 The default keymap is for a regular QWERTY keyboard, with the vowels under the thumbs like English steno's `c v | n m`:

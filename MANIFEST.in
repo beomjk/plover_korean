@@ -1,4 +1,6 @@
 include README.md
+include docs/tutorial/*.md
+include docs/tutorial/tools/*.py
 include plover_korean/system/cas/dictionaries/*.json
 include plover_korean/system/cas/dictionaries/partial/*.json
 include plover_korean/system/cas/dictionaries/partial/*.yaml
