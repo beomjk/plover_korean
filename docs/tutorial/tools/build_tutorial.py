@@ -77,11 +77,14 @@ def english_keys(steno):
     return " ".join(keys)
 
 
+TO_KOREAN = "{PLOVER:SET_CONFIG:'system_name':'Korean Modern C','machine_type':'Keyboard'}"
+
+
 def check_english_dictionaries():
     config = Path.home() / "Library/Application Support/plover"
     user = json.loads((config / "user.json").read_text(encoding="utf-8"))
     commands = json.loads((config / "commands.json").read_text(encoding="utf-8"))
-    assert user["KPHRO*"] == "{PLOVER:SET_CONFIG:'system_name':'Korean Modern C','machine_type':'Keyboard'}"
+    assert user["KPHRO*"] == TO_KOREAN
     assert commands["PHROLG"] == "{PLOVER:TOGGLE}"
     assert english_keys("KPHRO*") == "s e r f v t", english_keys("KPHRO*")
     assert english_keys("PHROLG") == "e r f v o l", english_keys("PHROLG")
@@ -223,7 +226,8 @@ def readme():
 def lesson1():
     return doc(
         "# 1과. 준비",
-        "이 과에서는 Plover를 한국어 모드로 바꾸고, 속기의 기본 단위인 **획**을 익힙니다.",
+        "이 과에서는 Plover를 한국어 모드로 바꾸고, 속기의 기본 단위인 **획**을 익힙니다. "
+        "Plover와 플러그인 설치는 [저장소 README](../../README.md#installation)를 보세요.",
         "## 1. 입력 소스는 ABC로",
         "Plover를 쓰는 동안에는 macOS 입력 소스를 **ABC**로 두세요. 2벌식이 켜져 있으면 Plover가 보내는 "
         "영문자·공백·문장부호가 한글 입력기를 거치면서 다른 글자로 바뀔 수 있습니다. 한글 속기는 Plover가 "
@@ -233,7 +237,18 @@ def lesson1():
         "- 창의 **Output** 항목에서 **Enabled**를 고르면 켜지고, **Disabled**를 고르면 꺼집니다.\n"
         "- 켜져 있는 동안에는 키보드가 속기 장치가 되어 평소처럼 타이핑할 수 없습니다. 평소 타이핑을 할 때는 끄세요.",
         "## 3. 한국어로 전환하기",
-        "Plover는 마지막으로 쓰던 모드로 켜지고, 지금은 영어 모드로 되어 있습니다. "
+        "Plover는 마지막으로 쓰던 모드로 켜지고, 처음에는 영어 모드입니다. "
+        "영어 모드에서 한국어로 넘어오는 획은 Plover 영어 사전에 없어서, 처음 한 번만 직접 넣어 줍니다.",
+        "### 처음 한 번만: 전환 획 넣기",
+        "1. Plover 창에서 **File → Open config folder**를 눌러 설정 폴더를 엽니다.\n"
+        "2. **File → Quit Plover**로 Plover를 끕니다. 사전 파일은 Plover가 꺼져 있을 때 고쳐야 합니다.\n"
+        "3. 설정 폴더의 `user.json`을 텍스트 편집기(TextEdit 등)로 열고, 내용을 아래로 바꿉니다. "
+        "처음 설치한 상태라면 파일에는 `{`와 `}`만 있습니다.",
+        f"```json\n{{\n\"KPHRO*\": \"{TO_KOREAN}\"\n}}\n```",
+        "TextEdit에서 직접 치면 따옴표가 둥근 따옴표로 바뀔 수 있으니, 위 내용을 복사해서 붙여 넣으세요. "
+        "이미 다른 항목이 있다면 `{` 다음 줄에 `\"KPHRO*\"` 줄만 넣고, 그 줄 끝에 쉼표(`,`)를 붙입니다.",
+        "4. 저장하고 Plover를 다시 켭니다.",
+        "### 전환하기",
         "Output을 켠 상태에서 아래 획을 치면 한국어 모드로 바뀝니다.",
         "| 하는 일 | 영어 속기 표기 | 누를 키 |\n| --- | --- | --- |\n"
         f"| 한국어로 전환 | `KPHRO*` | `{english_keys('KPHRO*')}` |",
